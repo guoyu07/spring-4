@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context" xmlns:c="http://www.springframework.org/schema/c"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!--<context:component-scan base-package="com.spring.demo"/>-->
+
+    <!--<bean id = "compactDisc" class="com.spring.demo.service.impl.SgtPeppers" />-->
+    <bean id = "compactDisc" class="com.spring.demo.service.impl.BlankPeppers" >
+        <constructor-arg index="0" value="Story Stealer"/>
+        <constructor-arg index="1" value="Amei"/>
+        <constructor-arg index="2">
+            <list>
+                <value>偷故事的人</value>
+                <value>连名带姓</value>
+            </list>
+        </constructor-arg>
+    </bean>
+
+    <!--<bean id = "compactDisc" class="com.spring.demo.service.impl.BlankPeppers" >-->
+        <!--&lt;!&ndash;<property name="artist" value="Amei"/>&ndash;&gt;-->
+        <!--<property name="title" value="Story Stealer"/>-->
+        <!--<property name="tracks" >-->
+            <!--<list>-->
+                <!--<value>偷故事的人</value>-->
+                <!--<value>连名带姓</value>-->
+            <!--</list>-->
+        <!--</property>-->
+    <!--</bean>-->
+
+    <!--<bean id = "cdPlayer" class="com.spring.demo.service.impl.CDPlayer">-->
+        <!--<constructor-arg ref="compactDisc"/>-->
+    <!--</bean>-->
+
+    <!-- 简化上述配置 -->
+    <!--<bean id="cdPlayer" class="com.spring.demo.service.impl.CDPlayer" c:compactDisc-ref="compactDisc" />-->
+    <bean id="cdPlayer" class="com.spring.demo.service.impl.CDPlayer" p:compactDisc-ref="compactDisc" />
+    <!--<bean id="cdPlayer" class="com.spring.demo.service.impl.CDPlayer" >-->
+        <!--<property name="compactDisc" ref="compactDisc"/>-->
+    <!--</bean>-->
+
+
+</beans>

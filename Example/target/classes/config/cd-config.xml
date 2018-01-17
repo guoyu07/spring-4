@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="compactDisc" class="com.spring.demo.service.impl.BlankPeppers">
+        <property name="artist" value="LiPeng"/>
+        <property name="title" value="Gucci Gang"/>
+        <property name="tracks">
+            <list>
+                <value>Gucci Gang</value>
+            </list>
+        </property>
+    </bean>
+
+</beans>
